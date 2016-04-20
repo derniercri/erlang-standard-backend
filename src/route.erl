@@ -6,9 +6,8 @@
 -export([out/1]).
 
 %% Routing
-%% Generic route
-route(_, _, _) -> 
-    return:html(?ERROR_NO_SERVICE).
+route(_, _, ["hello"]) -> return:html({h1, [], ["Hello World"]});
+route(_, _, _) -> return:html(?ERROR_NO_SERVICE).
 
 %% Entry point
 out(Arg) ->
